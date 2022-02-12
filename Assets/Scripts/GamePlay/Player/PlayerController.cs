@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using EA.BurningSky.Data;
 using EA.BurningSky.Event;
 using UnityEngine;
@@ -9,6 +7,9 @@ using EventType = EA.BurningSky.Event.EventType;
 
 namespace EA.BurningSky.Gameplay
 {
+    /// <summary>
+    /// A class which controls player object and responsible for player movement
+    /// </summary>
     public class PlayerController : MonoBehaviour
     {
         #region Public_Variables
@@ -17,7 +18,8 @@ namespace EA.BurningSky.Gameplay
         public Rigidbody body;
         public Collider myCollider;
         public Camera myCamera;
-        public Health health;
+        //Reference of IDamagable Interface. Composition depending on interface not on any class.
+        public IDamagable health;
         [NonSerialized] public bool isPlayerSelected;
         #endregion
 
@@ -37,47 +39,56 @@ namespace EA.BurningSky.Gameplay
             _xMax = BoundaryDetector.screenBoundary.x;
             _zMin = -BoundaryDetector.screenBoundary.y / 4;
             _zMax = BoundaryDetector.screenBoundary.y - (BoundaryDetector.screenBoundary.y / 4);
-            health.killPlayer += KillPlayer;
+            health = GetComponent<IDamagable>();
+            health.KillPlayer += KillPlayer;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (_inputAvailable)
+            if (GamePlayManager.Instance.IsPlayingState)
             {
-                Ray ray = Camera.main.ScreenPointToRay(_input);
-                RaycastHit hit;
-                if (myCollider.Raycast(ray, out hit, 100.0f))
+                if (_inputAvailable)
                 {
-                    _inputPos.x = myCamera.ScreenToWorldPoint(_input).x;
-                    _inputPos.z = myCamera.ScreenToWorldPoint(_input).z;
+                    //Player movement input Logic
+                    Ray ray = Camera.main.ScreenPointToRay(_input);
+                    RaycastHit hit;
+                    if (myCollider.Raycast(ray, out hit, 100.0f))
+                    {
+                        _inputPos.x = myCamera.ScreenToWorldPoint(_input).x;
+                        _inputPos.z = myCamera.ScreenToWorldPoint(_input).z;
 
-                    _inputPos.x = Mathf.Clamp(_inputPos.x, _xMin, _xMax);
-                    _inputPos.z = Mathf.Clamp(_inputPos.z, _zMin, _zMax);
-                    isPlayerSelected = true;
+                        _inputPos.x = Mathf.Clamp(_inputPos.x, _xMin, _xMax);
+                        _inputPos.z = Mathf.Clamp(_inputPos.z, _zMin, _zMax);
+                        isPlayerSelected = true;
+                    }
+                    return;
                 }
-                return;
+                _inputAvailable = false;
             }
-            _inputAvailable = false;
         }
 
         void FixedUpdate()
         {
-            if (isPlayerSelected)
+            if (GamePlayManager.Instance.IsPlayingState)
             {
-                body.MovePosition(_inputPos);
-                isPlayerSelected = false;
-            }
-            else
-            {
-                body.velocity = Vector3.zero;
+                if (isPlayerSelected)
+                {
+                    //Move rigidbody
+                    body.MovePosition(_inputPos);
+                    isPlayerSelected = false;
+                }
+                else
+                {
+                    body.velocity = Vector3.zero;
+                }
             }
         }
 
         void OnDestroy()
         {
             EventManager.UnRegisterMethod(EventType.MouseDown, ReceiveInput);
-            health.killPlayer -= KillPlayer;
+            health.KillPlayer -= KillPlayer;
         }
 
         #endregion
@@ -92,9 +103,13 @@ namespace EA.BurningSky.Gameplay
             _input.y = temp.y;
         }
 
+        /// <summary>
+        /// Kill player callback
+        /// </summary>
         void KillPlayer()
         {
             gameObject.SetActive(false);
+            GamePlayManager.Instance.GameOver();
             //Create particle here
         }
 

@@ -1,9 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace EA.BurningSky.Data
 {
+    public enum GameState
+    {
+        NotPlaying, // Before Play button clicked
+        Playing,
+        Paused,
+        GameOver,
+        None
+    }
+
     public enum EnemyType
     {
         Small1,
@@ -34,20 +39,22 @@ namespace EA.BurningSky.Data
         Level4,
         Level5
     }
-    
+
     public enum PoolNames
     {
         Bullet1,
         Bullet2,
         Bullet3,
-        Enemy1,
-        Enemy2,
-        Enemy3,
-        Enemy4,
-        Enemy5,
+        Small1,
+        Small2,
+        Medium1,
+        Medium2,
+        Boss,
         BulletParticle1,
         BulletParticle2,
         BulletParticle3,
+        Shield,
+        ShootingBoost
     }
 
     public enum RewardType
@@ -72,6 +79,6 @@ namespace EA.BurningSky.Data
     public enum LevelProgressionParam
     {
         Time,
-        Score
+        Score,
     }
 }

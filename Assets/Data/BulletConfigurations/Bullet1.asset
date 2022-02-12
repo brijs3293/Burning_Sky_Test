@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bullet1
   m_EditorClassIdentifier: 
   bulletType: 0
-  power: 0
+  power: 2
   speed: 2
   particleNameWhileHit: 0

@@ -1,12 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace EA.BurningSky.Gameplay
 {
-    public class DamageHandler : MonoBehaviour
+    /// <summary>
+    /// A common register for all objects which can be damaged. This register is created to transfer responsibility of damage. 
+    /// Secondly it provides better performance as every time when bullet hits Getcomponent is not called as all the IDamagable are registered here so just has to search rather getting component
+    /// </summary>
+    public class DamageHandler
     {
-        static Dictionary<int, IDamagable> _registerOfAllDamagables = new Dictionary<int, IDamagable>();
+        #region Variables
+
+        static readonly Dictionary<int, IDamagable> _registerOfAllDamagables = new Dictionary<int, IDamagable>();
+
+        #endregion
+
+        #region Public_Methods
 
         public static void RegisterDamagable(int hashCode, IDamagable damagable)
         {
@@ -28,5 +37,6 @@ namespace EA.BurningSky.Gameplay
                 damagable.Damage(damage);
             }
         }
+        #endregion
     }
 }

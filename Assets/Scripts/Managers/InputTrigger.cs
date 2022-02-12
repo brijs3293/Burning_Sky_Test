@@ -1,6 +1,4 @@
-using EA.BurningSky.Event;
 using UnityEngine;
-using EventType = UnityEngine.EventType;
 
 namespace EA.BurningSky.Event
 {

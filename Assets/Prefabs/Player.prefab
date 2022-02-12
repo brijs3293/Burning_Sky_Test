@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4246924680424110586}
   - component: {fileID: 3626572823519692203}
   - component: {fileID: 5265573876776125734}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SpaceShipPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4374954029373202552}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4374954030146141327}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BulletSpawnLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,8 @@ GameObject:
   - component: {fileID: 4374954030616221803}
   - component: {fileID: 4374954030616221800}
   - component: {fileID: 643796716}
-  m_Layer: 0
+  - component: {fileID: 656602164}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -239,6 +240,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 4374954029373202552}
   playerConfig: {fileID: 11400000, guid: 304fa14e480f2a749bcca8dc25f7a196, type: 2}
+--- !u!114 &656602164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374954030616221801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c7e4a276b003a43bef4acf20a600a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerConfig: {fileID: 11400000, guid: 304fa14e480f2a749bcca8dc25f7a196, type: 2}
 --- !u!1 &4374954030999440430
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4374954030999440433}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BulletSpawnRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

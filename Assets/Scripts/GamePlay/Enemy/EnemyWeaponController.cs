@@ -1,9 +1,13 @@
 using EA.BurningSky.Data;
 using EA.BurningSky.ObjectPool;
+using EA.BurningSky.Utility;
 using UnityEngine;
 
 namespace EA.BurningSky.Gameplay
 {
+    /// <summary>
+    /// A class that manages fire from enemy as per configurations.
+    /// </summary>
     public class EnemyWeaponController : MonoBehaviour
     {
         #region Public_Variables
@@ -14,13 +18,28 @@ namespace EA.BurningSky.Gameplay
         #endregion
 
         #region Private_Variables
+
+        private int _enemyLayer;
+
         #endregion
 
         #region Unity_Callbacks
 
+        void OnEnable()
+        {
+            //Start regular interval fire
+            InvokeRepeating(nameof(Fire), enemyConfig.fireStartDelay, enemyConfig.fireTime);
+        }
+
         void Start()
         {
-            InvokeRepeating(nameof(Fire), enemyConfig.fireStartDelay, enemyConfig.fireTime);
+            _enemyLayer = LayerMask.NameToLayer(Constants.EnemyTag);
+        }
+
+        void OnDisable()
+        {
+            //Stop Fire
+            CancelInvoke(nameof(Fire));
         }
 
         #endregion
@@ -29,9 +48,14 @@ namespace EA.BurningSky.Gameplay
 
         void Fire()
         {
-            var t = PoolManager.Spawn(enemyConfig.bulletName);
-            t.position = bulletSpawn.position;
-            t.rotation = bulletSpawn.rotation;
+            if (GamePlayManager.Instance.IsPlayingState)
+            {
+                var t = PoolManager.Spawn((enemyConfig.bulletName).ToEnum<PoolNames>());
+                //Assign here enemy bullet enemy layer so it will only collide with Player as per physics collision matrix.
+                t.gameObject.layer = _enemyLayer;
+                t.position = bulletSpawn.position;
+                t.forward = bulletSpawn.forward;
+            }
         }
 
         #endregion

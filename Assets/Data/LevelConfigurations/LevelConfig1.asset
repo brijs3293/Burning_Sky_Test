@@ -12,7 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94bf802264f9111458cfc10f59542acc, type: 3}
   m_Name: LevelConfig1
   m_EditorClassIdentifier: 
-  enemyTypes: 
-  fleets: 
-  speedMultiplier: 0
-  scoreMultiplier: 0
+  difficultyLevel: 0
+  fleetConfigs:
+  - enemyType: 0
+    fleetType: 0
+    movementTypeType: 0
+    numberOfEnemy: 1
+    timeToLetPass: 5
+  - enemyType: 0
+    fleetType: 2
+    movementTypeType: 0
+    numberOfEnemy: 2
+    timeToLetPass: 5
+  - enemyType: 0
+    fleetType: 1
+    movementTypeType: 1
+    numberOfEnemy: 3
+    timeToLetPass: 5
+  speedMultiplier: 1
+  scoreMultiplier: 1
+  levelProgressionParameters:
+  - param: 0
+    value: 30
+  powersSupported: 01000000

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ShootingBoost
   m_EditorClassIdentifier: 
   powerUpType: 1
-  time: 0
-  value: 0
+  time: 15
+  value: 2

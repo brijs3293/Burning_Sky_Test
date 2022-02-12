@@ -5,7 +5,13 @@ namespace EA.BurningSky.Event
 {
     public enum EventType
     {
-        MouseDown
+        MouseDown,
+        GameOver,
+        GameStart,
+        GamePause,
+        GameRestart,
+        ScoreUpdate,
+        HealthUpdate
     }
 
     /// <summary>
@@ -13,14 +19,15 @@ namespace EA.BurningSky.Event
     /// </summary>
     public class EventManager
     {
+        //Dictionary used for Key value pair. and faster search operation.
         static Dictionary<EventType, Action> _actions = new Dictionary<EventType, Action>();
         static Dictionary<EventType, Action<object>> _actionsWithParam = new Dictionary<EventType, Action<object>>();
 
         public static void RegisterMethod(EventType type, Action action)
         {
-            if (_actions.TryGetValue(type, out var storedAction))
+            if (_actions.ContainsKey(type))
             {
-                storedAction += action;
+                _actions[type] += action;
             }
             else
             {
@@ -36,9 +43,9 @@ namespace EA.BurningSky.Event
 
         public static void RegisterMethod(EventType type, Action<object> action)
         {
-            if (_actionsWithParam.TryGetValue(type, out var storedAction))
+            if (_actionsWithParam.ContainsKey(type))
             {
-                storedAction += action;
+                _actionsWithParam[type] += action;
             }
             else
             {

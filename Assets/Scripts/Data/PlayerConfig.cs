@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using EA.BurningSky.ObjectPool;
 using UnityEngine;
 
 namespace EA.BurningSky.Data
 {
+    /// <summary>
+    /// A Scriptable object for Player configuration
+    /// </summary>
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "ScriptableObjects/PlayerConfig", order = 0)]
     public class PlayerConfig : ScriptableObject
     {
         public float speed;
         public float fireTime;
         public float maxHealth;
-        public PoolNames bulletName;
+        public BulletType bulletName;
         public PoolNames particleWhileBlast;
     }
 }

@@ -5,13 +5,16 @@ using UnityEngine;
 
 namespace EA.BurningSky.Gameplay
 {
+    /// <summary>
+    /// A class which controls enemy. It has movement composition so it's 'Has a' relationship for movement using strategy pattern.
+    /// </summary>
     public class EnemyController : MonoBehaviour
     {
         #region Public_Variables
 
         public EnemyConfig enemyConfig;
         public Rigidbody body;
-        public Health health;
+        public IDamagable health;
 
         #endregion
 
@@ -23,10 +26,17 @@ namespace EA.BurningSky.Gameplay
 
         #region Unity_Callbacks
 
+        void Awake()
+        {
+            transform.localScale = enemyConfig.enemyScale;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
-            health.killPlayer += KillPlayer;
+            health = GetComponent<IDamagable>();
+            health.KillPlayer += KillPlayer;
+            //SetMovementType(EnemyMovementType.Evasive);
         }
 
         // Update is called once per frame
@@ -40,7 +50,10 @@ namespace EA.BurningSky.Gameplay
 
         void OnDestroy()
         {
-            health.killPlayer -= KillPlayer;
+            if (health != null)
+            {
+                health.KillPlayer -= KillPlayer;
+            }
         }
 
         #endregion
@@ -56,24 +69,14 @@ namespace EA.BurningSky.Gameplay
         #endregion
 
         #region Public_Methods
-
-        public void SetMovementType(EnemyMovementType movementTypeType, float speedMultiplier = 1)
+        /// <summary>
+        /// Method that inits movement. This is injected from out side so it is not dependent on movement classes.
+        /// </summary>
+        public void SetMovement(IEnemyMovement movement)
         {
-            switch (movementTypeType)
-            {
-                case EnemyMovementType.Straight:
-                    _enemyMovement = new StraightEnemyMovement(this, speedMultiplier);
-                    break;
-                case EnemyMovementType.Zigzag:
-                    _enemyMovement = new ZigZagEnemyMovement(this, speedMultiplier);
-                    break;
-                case EnemyMovementType.Evasive:
-                    _enemyMovement = new EvasiveEnemyMovement(this, speedMultiplier);
-                    break;
-
-            }
+            _enemyMovement = movement;
+            movement.SetController(this);
         }
-
 
         #endregion
     }

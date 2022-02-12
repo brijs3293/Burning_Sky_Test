@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f71699fa4d925743a0db69f7d486246, type: 3}
   m_Name: Small2
   m_EditorClassIdentifier: 
-  speed: 0
-  tilt: 0
-  fireTime: 0
-  maxHealth: 0
+  speed: 0.2
+  fireTime: 2
+  maxHealth: 12
   bulletName: 0
-  enemyType: 0
-  fireStartDelay: 0
-  rewardsAfterKill: []
+  particleWhileBlast: 8
+  enemyType: 1
+  enemyScale: {x: 0.5, y: 0.5, z: 0.5}
+  fireStartDelay: 2
+  rewardsAfterKill:
+  - rewardType: 0
+    value: 12

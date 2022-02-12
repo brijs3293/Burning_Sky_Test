@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using EA.BurningSky.ObjectPool;
 using UnityEngine;
 
 namespace EA.BurningSky.Gameplay
 {
+    /// <summary>
+    /// A class which despawns object after given time
+    /// </summary>
     public class TimedDespawn : MonoBehaviour
     {
         public float time;

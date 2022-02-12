@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984e6d2386d74174e9c11b4f4e9bdf25, type: 3}
   m_Name: Bullet3
   m_EditorClassIdentifier: 
-  bulletType: 0
-  power: 0
-  particleNameWhileHit: 0
+  bulletType: 2
+  power: 5
+  speed: 5
+  particleNameWhileHit: 2
