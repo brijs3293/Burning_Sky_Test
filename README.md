@@ -1,5 +1,5 @@
-# EA_Burning_Sky_Test
-This is technical test by EA
+# Burning_Sky_Test
+This is Sample Project
 
 Credits 
   - Art : Jeel Gajera(My Friend)
