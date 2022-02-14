@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Event
+namespace BurningSky.Event
 {
     /// <summary>
     /// A class which triggers input events using EventManager

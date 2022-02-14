@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using EA.BurningSky.Data;
+using BurningSky.Data;
 using UnityEngine;
 
-namespace EA.BurningSky.ObjectPool
+namespace BurningSky.ObjectPool
 {
     /// <summary>
     /// A Class an object's pool that do not support multiple variants in single pool to avoid string operation (or one more data as variant identification). So to identify multiple varients we need unique identities.

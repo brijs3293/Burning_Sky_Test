@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     [System.Serializable]
     public struct RewardData

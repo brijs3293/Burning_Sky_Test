@@ -1,6 +1,6 @@
 using System;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// An interface which marks game object to get damage in game.

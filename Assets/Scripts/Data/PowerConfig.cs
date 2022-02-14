@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     [CreateAssetMenu(fileName = "PowerConfig", menuName = "ScriptableObjects/PowerConfig", order = 3)]
     public class PowerConfig : ScriptableObject

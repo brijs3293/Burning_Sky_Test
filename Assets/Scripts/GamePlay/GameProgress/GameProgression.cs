@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using EA.BurningSky.Data;
-using EA.BurningSky.Event;
-using EA.BurningSky.Utility;
+using BurningSky.Data;
+using BurningSky.Event;
+using BurningSky.Utility;
 using UnityEngine;
-using EventType = EA.BurningSky.Event.EventType;
+using EventType = BurningSky.Event.EventType;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A custom data type where data of progression and current progress is encapsulated

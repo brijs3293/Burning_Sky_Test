@@ -1,6 +1,6 @@
-using EA.BurningSky.Data;
+using BurningSky.Data;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// An interface to mark object to consume power. It also removes dependency over concrete class. 

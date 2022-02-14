@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// Class represents Paused state  behaviour

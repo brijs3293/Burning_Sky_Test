@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using EA.BurningSky.Data;
+using BurningSky.Data;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     public interface IComponentsGenerator
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     /// <summary>
     /// A Scriptable object for Player configuration

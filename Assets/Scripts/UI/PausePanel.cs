@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.UI
+namespace BurningSky.UI
 {
     public class PausePanel : MonoBehaviour
     {

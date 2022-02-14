@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using EA.BurningSky.UI;
+using BurningSky.UI;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A Command to show ingameplay score. This removes dependency from calling class. Event can be used but what if event do not occur and still want to update score in Ui let say start of game. 

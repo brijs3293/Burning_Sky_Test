@@ -1,9 +1,9 @@
-using EA.BurningSky.Event;
-using EA.BurningSky.Gameplay;
+using BurningSky.Event;
+using BurningSky.Gameplay;
 using UnityEngine;
-using EventType = EA.BurningSky.Event.EventType;
+using EventType = BurningSky.Event.EventType;
 
-namespace EA.BurningSky.UI
+namespace BurningSky.UI
 {
     public class UiManager : MonoBehaviour
     {

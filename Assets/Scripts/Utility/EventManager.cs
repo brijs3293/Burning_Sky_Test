@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EA.BurningSky.Event
+namespace BurningSky.Event
 {
     public enum EventType
     {

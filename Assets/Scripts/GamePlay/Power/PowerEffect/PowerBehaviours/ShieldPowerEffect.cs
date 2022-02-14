@@ -1,8 +1,8 @@
 using System;
-using EA.BurningSky.Data;
+using BurningSky.Data;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A concrete implementation of shield power

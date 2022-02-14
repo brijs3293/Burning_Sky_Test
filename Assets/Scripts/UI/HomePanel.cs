@@ -1,9 +1,9 @@
-using EA.BurningSky.Event;
-using EA.BurningSky.Gameplay;
+using BurningSky.Event;
+using BurningSky.Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace EA.BurningSky.UI
+namespace BurningSky.UI
 {
     public class HomePanel : MonoBehaviour
     {

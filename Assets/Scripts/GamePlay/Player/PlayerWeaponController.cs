@@ -1,9 +1,9 @@
-using EA.BurningSky.Data;
-using EA.BurningSky.ObjectPool;
-using EA.BurningSky.Utility;
+using BurningSky.Data;
+using BurningSky.ObjectPool;
+using BurningSky.Utility;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class which is responsible for player fire as per c onfiguration

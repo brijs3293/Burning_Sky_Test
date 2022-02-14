@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     /// <summary>
     /// Configuration of single fleet. Every difficulty level has number of fleets.

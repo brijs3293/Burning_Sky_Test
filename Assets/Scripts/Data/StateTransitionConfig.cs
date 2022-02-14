@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using EA.BurningSky.Data;
+using BurningSky.Data;
 using UnityEngine;
 
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     /// <summary>
     /// Defines from state to states transitions Link

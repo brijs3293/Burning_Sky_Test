@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using EA.BurningSky.Data;
-using EA.BurningSky.ObjectPool;
-using EA.BurningSky.Utility;
+using BurningSky.Data;
+using BurningSky.ObjectPool;
+using BurningSky.Utility;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class which generates Powers. Implements IComponentsGenerator so other class should be dependent on interface not on this class.

@@ -1,4 +1,4 @@
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     public class Constants
     {

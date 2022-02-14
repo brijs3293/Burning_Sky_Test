@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using EA.BurningSky.Data;
-using EA.BurningSky.Event;
-using EA.BurningSky.Utility;
+using BurningSky.Data;
+using BurningSky.Event;
+using BurningSky.Utility;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using EventType = EA.BurningSky.Event.EventType;
+using EventType = BurningSky.Event.EventType;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class responsible  for GAmeplay management

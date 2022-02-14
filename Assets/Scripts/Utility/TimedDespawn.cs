@@ -1,7 +1,7 @@
-using EA.BurningSky.ObjectPool;
+using BurningSky.ObjectPool;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class which despawns object after given time

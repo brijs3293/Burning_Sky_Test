@@ -1,7 +1,7 @@
 using System;
-using EA.BurningSky.Data;
+using BurningSky.Data;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A concrete implementation of Shooting booster

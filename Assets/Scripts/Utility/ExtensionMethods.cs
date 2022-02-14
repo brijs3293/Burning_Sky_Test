@@ -1,6 +1,6 @@
 using System;
 
-namespace EA.BurningSky.Utility
+namespace BurningSky.Utility
 {
     public static class ExtensionMethods
     {

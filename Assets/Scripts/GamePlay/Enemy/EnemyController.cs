@@ -1,9 +1,9 @@
 using System;
-using EA.BurningSky.Data;
-using EA.BurningSky.ObjectPool;
+using BurningSky.Data;
+using BurningSky.ObjectPool;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class which controls enemy. It has movement composition so it's 'Has a' relationship for movement using strategy pattern.

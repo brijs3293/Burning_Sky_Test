@@ -1,4 +1,4 @@
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// An Interface which provides abstraction for different types of enemy movements. Strategy pattern

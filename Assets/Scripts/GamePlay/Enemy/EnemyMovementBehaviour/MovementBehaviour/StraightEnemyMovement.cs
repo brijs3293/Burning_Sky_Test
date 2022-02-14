@@ -1,4 +1,4 @@
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// Concrete  implementation of Straight enemy movement

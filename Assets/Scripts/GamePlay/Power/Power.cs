@@ -1,9 +1,9 @@
-using EA.BurningSky.Data;
-using EA.BurningSky.ObjectPool;
+using BurningSky.Data;
+using BurningSky.ObjectPool;
 using UnityEditor;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class responsible for power object travelling and detecting player trigger.

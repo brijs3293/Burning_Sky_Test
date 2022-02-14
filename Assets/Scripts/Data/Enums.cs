@@ -1,4 +1,4 @@
-namespace EA.BurningSky.Data
+namespace BurningSky.Data
 {
     public enum GameState
     {

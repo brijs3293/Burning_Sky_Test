@@ -1,4 +1,4 @@
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// Class represents GameOver state  behaviour

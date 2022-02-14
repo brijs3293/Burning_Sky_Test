@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using EA.BurningSky.Data;
-using EA.BurningSky.Utility;
+using BurningSky.Data;
+using BurningSky.Utility;
 using UnityEngine;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// A class which generates enemy. Implements IComponentsGenerator so other class should be dependent on interface not on this class.

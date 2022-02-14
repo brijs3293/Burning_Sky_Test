@@ -1,6 +1,6 @@
-using EA.BurningSky.Data;
+using BurningSky.Data;
 
-namespace EA.BurningSky.Gameplay
+namespace BurningSky.Gameplay
 {
     /// <summary>
     /// An interface for strategy pattern which provides abstraction for fleet creation
